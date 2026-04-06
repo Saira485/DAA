@@ -1,16 +1,26 @@
 #include <iostream>
 using namespace std;
 
-int fib(int n) {
-    if(n <= 1)
-        return n;
-    return fib(n-1) + fib(n-2);
+// Recursive function
+int fibonacci(int n) {
+    if(n == 0)
+        return 0;   // base case
+    else if(n == 1)
+        return 1;   // base case
+    else
+        return fibonacci(n - 1) + fibonacci(n - 2);  // recursive call
 }
 
 int main() {
     int n;
+
+    cout << "Enter number of terms: ";
     cin >> n;
 
-    for(int i = 0; i < n; i++)
-        cout << fib(i) << " ";
+    cout << "Fibonacci Series: ";
+    for(int i = 0; i < n; i++) {
+        cout << fibonacci(i) << " ";
+    }
+
+    return 0;
 }
